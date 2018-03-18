@@ -75,14 +75,4 @@ public class Highscore {
     public List<Score> getScores() {
         return scores;
     }
-
-    public static void main(String[] args) throws Exception {
-        Highscore highscore = new Highscore();
-        highscore.loadFromXMLFile("scores.xml");
-
-        for(Score score : highscore.getScores()) {
-            System.out.println(score);
-        }
-
-    }
 }
