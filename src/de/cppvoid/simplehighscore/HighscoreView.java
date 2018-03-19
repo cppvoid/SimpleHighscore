@@ -37,6 +37,7 @@ public class HighscoreView extends Application {
 
         TableColumn nameColumn = new TableColumn("Name");
         TableColumn scoreColumn = new TableColumn("Score");
+        scoreColumn.setSortType(TableColumn.SortType.DESCENDING);
 
         scoresView.getColumns().addAll(nameColumn, scoreColumn);
         scoresView.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
@@ -61,6 +62,7 @@ public class HighscoreView extends Application {
 
                         ObservableList<Score> scores = FXCollections.observableArrayList(highscore.getScores());
                         scoresView.setItems(scores);
+                        scoresView.getSortOrder().add(scoreColumn);
 
                     } catch(Exception ex) {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
